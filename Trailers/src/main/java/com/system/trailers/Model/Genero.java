@@ -1,10 +1,12 @@
-package Model;
+package com.system.trailers.Model;
 
 import jakarta.persistence.*;
+import lombok.ToString;
 
 import java.util.List;
 
 @Entity
+@ToString
 public class Genero {
     @Id
     @Column(name="id_genero")

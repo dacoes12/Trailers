@@ -1,7 +1,7 @@
-package service;
+package com.system.trailers.service;
 
-import exception.AlmacenException;
-import exception.FileNotFoundException;
+import com.system.trailers.exception.AlmacenException;
+import com.system.trailers.exception.FileNotFoundException;
 import jakarta.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Value;

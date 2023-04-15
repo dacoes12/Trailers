@@ -1,6 +1,6 @@
-package repository;
+package com.system.trailers.repository;
 
-import Model.Pelicula;
+import com.system.trailers.Model.Pelicula;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

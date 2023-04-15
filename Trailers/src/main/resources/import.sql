@@ -1,1 +1,1 @@
-insert into genero (id,titulo) values(1,'Prueba')
+insert into genero (id_genero,titulo) values(1,'Prueba')
