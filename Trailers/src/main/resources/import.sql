@@ -1,0 +1,1 @@
+insert into genero (id,titulo) values(1,'Prueba')
