@@ -20,7 +20,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
 @Service
-public class AlmacenServiceImp implements AlmacenService{
+public class AlmacenServiceImp implements IAlmacenService {
 
     @Value("${storage.location}")
     private String storageLocation;

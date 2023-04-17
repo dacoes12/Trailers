@@ -1,1 +1,7 @@
-insert into genero (id_genero,titulo) values(1,'Prueba')
+insert into genero (id_genero,titulo) values(1,'Accion')
+insert into genero (id_genero,titulo) values(2,'Aventura')
+insert into genero (id_genero,titulo) values(3,'Comedia')
+insert into genero (id_genero,titulo) values(4,'Drama')
+insert into genero (id_genero,titulo) values(5,'Fantasia')
+insert into genero (id_genero,titulo) values(6,'Documentales')
+insert into genero (id_genero,titulo) values(7,'Ciencia Ficcion')

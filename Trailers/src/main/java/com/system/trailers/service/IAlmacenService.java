@@ -5,7 +5,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.nio.file.Path;
 
-public interface AlmacenService {
+public interface IAlmacenService {
 
     public void iniciarAlmacenArchivos();
 
