@@ -29,7 +29,7 @@ public class Pelicula {
     @NotBlank
     private String youtubeTrailerId;
 
-    private String rutaPortada;
+    private String urlPortada;
 
     //@NotEmpty  //carga solo cuando se necesite
     @ManyToMany(fetch = FetchType.LAZY)
@@ -37,9 +37,6 @@ public class Pelicula {
             joinColumns = @JoinColumn(name = "id_pelicula"),
             inverseJoinColumns = @JoinColumn(name = "id_genero"))
     private List<Genero> generos;
-
-    @Transient
-    private MultipartFile portada;
 
     public Integer getId() {
         return id;
@@ -81,14 +78,6 @@ public class Pelicula {
         this.youtubeTrailerId = youtubeTrailerId;
     }
 
-    public String getRutaPortada() {
-        return rutaPortada;
-    }
-
-    public void setRutaPortada(String rutaPortada) {
-        this.rutaPortada = rutaPortada;
-    }
-
     public List<Genero> getGeneros() {
         return generos;
     }
@@ -97,35 +86,33 @@ public class Pelicula {
         this.generos = generos;
     }
 
-    public MultipartFile getPortada() {
-        return portada;
+    public String getUrlPortada() {
+        return urlPortada;
     }
 
-    public void setPortada(MultipartFile portada) {
-        this.portada = portada;
+    public void setUrlPortada(String urlPortada) {
+        this.urlPortada = urlPortada;
     }
 
     public Pelicula() {
     }
 
-    public Pelicula(String titulo, String sinopsis, LocalDate fechaEstreno, String youtubeTrailerId, String rutaPortada, List<Genero> generos, MultipartFile portada) {
+    public Pelicula(String titulo, String sinopsis, LocalDate fechaEstreno, String youtubeTrailerId, String urlPortada, List<Genero> generos) {
         this.titulo = titulo;
         this.sinopsis = sinopsis;
         this.fechaEstreno = fechaEstreno;
         this.youtubeTrailerId = youtubeTrailerId;
-        this.rutaPortada = rutaPortada;
+        this.urlPortada = urlPortada;
         this.generos = generos;
-        this.portada = portada;
     }
 
-    public Pelicula(Integer id, String titulo, String sinopsis, LocalDate fechaEstreno, String youtubeTrailerId, String rutaPortada, List<Genero> generos, MultipartFile portada) {
+    public Pelicula(Integer id, String titulo, String sinopsis, LocalDate fechaEstreno, String youtubeTrailerId, String urlPortada, List<Genero> generos) {
         this.id = id;
         this.titulo = titulo;
         this.sinopsis = sinopsis;
         this.fechaEstreno = fechaEstreno;
         this.youtubeTrailerId = youtubeTrailerId;
-        this.rutaPortada = rutaPortada;
+        this.urlPortada = urlPortada;
         this.generos = generos;
-        this.portada = portada;
     }
 }
