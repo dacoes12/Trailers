@@ -3,6 +3,7 @@ package com.system.trailers.Controller;
 import com.system.trailers.dto.PeliculaDTO;
 import com.system.trailers.service.IPeliculaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +38,7 @@ public class PeliculaController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<PeliculaDTO>> getAll(){
-        return new ResponseEntity<>(this.service.getAll(),HttpStatus.OK);
+    public ResponseEntity<Page<PeliculaDTO>> getAll(@RequestParam(defaultValue = "pageNumber") int pageNumber, @RequestParam(defaultValue = "pageSize") int pageSize){
+        return new ResponseEntity<>(this.service.getAll(pageNumber,pageSize),HttpStatus.OK);
     }
 }

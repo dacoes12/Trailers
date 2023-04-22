@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -48,7 +49,19 @@ public class PeliculaServiceImpl implements IPeliculaService {
     }
 
     @Override
+    public Page<PeliculaDTO> getAll(int pageNumber, int pagezise) {
+        Pageable pageable = PageRequest.of(pageNumber,pagezise, Sort.by("fechaEstreno"));
+        Page<Pelicula> peliculas = this.repository.findAll(pageable);
+        List<PeliculaDTO> peliculasDTO = this.mapper.map(peliculas.getContent(), new TypeToken<List<PeliculaDTO>>(){}.getType());
+        return new PageImpl<>(peliculasDTO,pageable,peliculas.getTotalElements());
+    }
+
+    /*
+    @Override
     public List<PeliculaDTO> getAll() {
         return this.mapper.map(repository.findAll(), new TypeToken<List<PeliculaDTO>>(){}.getType());
     }
+    */
+
+
 }
